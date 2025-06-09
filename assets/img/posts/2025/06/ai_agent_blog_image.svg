@@ -1,0 +1,153 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a24;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#44a08d;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 发光效果 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 阴影效果 -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- 背景装饰网格 -->
+  <g opacity="0.1">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="800" height="600" fill="url(#grid)"/>
+  </g>
+  
+  <!-- 中央智能体核心 -->
+  <g transform="translate(400,300)">
+    <!-- 大脑/核心处理器 -->
+    <circle cx="0" cy="0" r="80" fill="url(#brainGradient)" filter="url(#glow)" opacity="0.9"/>
+    
+    <!-- 大脑纹理 -->
+    <g stroke="#ffffff" stroke-width="2" fill="none" opacity="0.7">
+      <path d="M -40,-20 Q -20,-40 0,-20 Q 20,-40 40,-20"/>
+      <path d="M -40,0 Q -20,20 0,0 Q 20,20 40,0"/>
+      <path d="M -40,20 Q -20,0 0,20 Q 20,0 40,20"/>
+    </g>
+    
+    <!-- 神经网络连接点 -->
+    <g fill="#ffffff" opacity="0.8">
+      <circle cx="-30" cy="-30" r="3"/>
+      <circle cx="30" cy="-30" r="3"/>
+      <circle cx="-30" cy="30" r="3"/>
+      <circle cx="30" cy="30" r="3"/>
+      <circle cx="0" cy="-40" r="3"/>
+      <circle cx="0" cy="40" r="3"/>
+      <circle cx="-40" cy="0" r="3"/>
+      <circle cx="40" cy="0" r="3"/>
+    </g>
+  </g>
+  
+  <!-- 工具和功能模块 -->
+  <!-- 邮件工具 -->
+  <g transform="translate(150,150)">
+    <rect x="-25" y="-20" width="50" height="40" rx="5" fill="url(#circuitGradient)" filter="url(#shadow)"/>
+    <path d="M -15,-5 L 0,5 L 15,-5" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <text x="0" y="50" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Email</text>
+  </g>
+  
+  <!-- 数据分析工具 -->
+  <g transform="translate(650,150)">
+    <rect x="-25" y="-20" width="50" height="40" rx="5" fill="url(#circuitGradient)" filter="url(#shadow)"/>
+    <g stroke="#ffffff" stroke-width="2" fill="none">
+      <path d="M -15,10 L -10,0 L -5,5 L 0,-5 L 5,0 L 10,-10 L 15,0"/>
+    </g>
+    <text x="0" y="50" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Analytics</text>
+  </g>
+  
+  <!-- API接口 -->
+  <g transform="translate(150,450)">
+    <rect x="-25" y="-20" width="50" height="40" rx="5" fill="url(#circuitGradient)" filter="url(#shadow)"/>
+    <g stroke="#ffffff" stroke-width="2" fill="none">
+      <rect x="-15" y="-10" width="30" height="20" rx="3"/>
+      <circle cx="-8" cy="-3" r="2"/>
+      <circle cx="0" cy="-3" r="2"/>
+      <circle cx="8" cy="-3" r="2"/>
+    </g>
+    <text x="0" y="50" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">API</text>
+  </g>
+  
+  <!-- 自动化工具 -->
+  <g transform="translate(650,450)">
+    <rect x="-25" y="-20" width="50" height="40" rx="5" fill="url(#circuitGradient)" filter="url(#shadow)"/>
+    <g stroke="#ffffff" stroke-width="2" fill="none">
+      <circle cx="0" cy="0" r="12"/>
+      <path d="M -8,-8 L 8,8 M -8,8 L 8,-8"/>
+    </g>
+    <text x="0" y="50" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Automation</text>
+  </g>
+  
+  <!-- 连接线 -->
+  <g stroke="#ffffff" stroke-width="2" fill="none" opacity="0.6" filter="url(#glow)">
+    <!-- 从中心到各个工具的连接 -->
+    <path d="M 320,250 Q 200,150 150,150"/>
+    <path d="M 480,250 Q 600,150 650,150"/>
+    <path d="M 320,350 Q 200,450 150,450"/>
+    <path d="M 480,350 Q 600,450 650,450"/>
+  </g>
+  
+  <!-- 动态粒子效果 -->
+  <g fill="#ffffff" opacity="0.6">
+    <circle cx="250" cy="200" r="2">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="200" r="2">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="400" r="2">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="400" r="2">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- 标题文字 -->
+  <text x="400" y="80" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="36" font-weight="bold" filter="url(#shadow)">
+    AI Agents: The Era of Autonomous Action
+  </text>
+  
+  <!-- 副标题 -->
+  <text x="400" y="120" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" opacity="0.9">
+    From "Can Talk" to "Can Act"
+  </text>
+  
+  <!-- 底部装饰 -->
+  <g transform="translate(400,550)">
+    <rect x="-100" y="-5" width="200" height="2" fill="#ffffff" opacity="0.3"/>
+    <text x="0" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" opacity="0.7">
+      Goal-Driven • Autonomous Planning • Tool Integration • Dynamic Learning
+    </text>
+  </g>
+</svg>
