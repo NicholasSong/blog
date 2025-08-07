@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cursor AI 编辑器完全指南：让编程更智能、更高效"
-date: 2025-01-15 10:00:00 +0800
+date: 2025-08-07 10:00:00 +0800
 categories: [开发工具]
 tags: [Cursor, AI编程, 开发效率, 代码编辑器]
 img: posts/2025/07/cursor.png
