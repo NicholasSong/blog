@@ -2,7 +2,7 @@
 title: NICHOLAS' BLOG
 description: 'A blog for the It & AI & DATA technology.' # this means to ignore newlines until "baseurl:"
 permalink: ':title:output_ext'
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://nicholassong.github.io/blog" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "/assets/img/branding/MVM-logo-full.svg"
 logo-icon: "/assets/img/branding/MVM-symbol.svg"
